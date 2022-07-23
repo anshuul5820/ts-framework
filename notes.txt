@@ -1,0 +1,25 @@
+problems at the current phase: 
+user has to be generic, 
+currently all methods are created inside user
+if some new class(Blog) needs be created, all methods have to be implemented all again.
+
+fix: 
+1. composition aproach 
+create class Model, declare instance of Model inside User
+then delegate Model methods, and create User's own methods.
+
+2. create getters inside to use properties of Model
+cons: 
+all methods need tto be reimplemented
+
+else allow access to Model props directly from User(user.model.set())
+con: 
+some instances will require nested calls user.model.set()
+some will require direct call user.fullname();l confusing!
+
+COMPOSITION APPROACH FAILS HERE
+
+2. inheritance approach: 
+inherit class Model,
+then all Model props will be available inside User
+ 
